@@ -1,0 +1,25 @@
+## Docker commands used to build the application 
+sudo docker build . -t techtrends -f ../Dockerfile
+
+## Docker commands used to run the application
+sudo docker run -p 7111:3111 -d techtrends
+
+## Docker commands used to get the application logs
+docker logs --follow <CONTAINER ID>
+
+## Logs from the container running the TechTrends application
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:39:27] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:39:31] "GET /metrics HTTP/1.1" 200 -
+INFO:app:09/16/2021, 03:39:11, Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:50:29] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:52:26] "GET / HTTP/1.1" 200 -
+INFO:app:09/16/2021, 03:39:11, "About Us" page retrieved!
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:52:28] "GET /about HTTP/1.1" 200 -
+INFO:app:09/16/2021, 03:39:11, Non-existing article accessed. 404 page returned!
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:52:36] "GET /56 HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:53:34] "GET /create HTTP/1.1" 200 -
+INFO:app:09/16/2021, 03:39:11, Article "Making hybrid work: How workplace leaders are taking action" created!
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:53:49] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [16/Sep/2021 03:53:49] "GET / HTTP/1.1" 200 -
+ 
