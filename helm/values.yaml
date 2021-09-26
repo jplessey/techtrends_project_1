@@ -8,7 +8,7 @@ service:
 image:
   repository: jlessey/techtrends
   tag: latest
-  PullPolicy: IfNotPresent
+  pullPolicy: IfNotPresent
 replicaCount: 1
 resources:
   requests:
